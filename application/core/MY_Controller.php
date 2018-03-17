@@ -74,14 +74,14 @@ class MY_Controller extends CI_Controller {
     //--------------------------------------------------------------------------------------------------------------------------------
 
 
-	public function _base64urlEncode($data) { 
-		return rtrim(strtr(base64_encode($data), '+/', '-_'), '='); 
-	} 
+    public function _base64urlEncode($data) { 
+        return rtrim(strtr(base64_encode($data), '+/', '-_'), '='); 
+    } 
 
 
     public function _base64urlDecode($data) { 
-		return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT)); 
-	}       
+        return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT)); 
+    }       
 
 
 
@@ -128,9 +128,9 @@ class MY_Controller extends CI_Controller {
         $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'smtp.googlemail.com',
-            'smtp_port' => 465,
-            'smtp_user' => 'trinityemailer@gmail.com',
-            'smtp_pass' => 'trinity@1963',
+            'smtp_port' => 587,
+            'smtp_user' => 'irishjingco25@gmail.com',
+            'smtp_pass' => 'irish062598',
             'mailtype' => 'html',
             'charset' => 'iso-8859-1',
             'starttls'  => TRUE,
@@ -141,10 +141,10 @@ class MY_Controller extends CI_Controller {
         $this->email->set_header('MIME-Version', '1.0; charset=utf-8');
         $this->email->set_header('Content-type', 'text/html');
         
-        $fromEmail = "trinityemailer@gmail.com"; 
+        $fromEmail = "irishjingco25@gmail.com"; 
   
   
-        $this->email->from($fromEmail, 'Randy Lagdaan'); 
+        $this->email->from($fromEmail, 'Irish Jingco'); 
         $this->email->to($toEmail);
         $this->email->subject($subject); 
         $this->email->message($message); 
@@ -178,4 +178,3 @@ class MY_Controller extends CI_Controller {
      }
 
 }
-
